@@ -21,7 +21,7 @@ wss.on('connection', function connection(ws) {
     const message = `Current visitors: ${numClients}`
     console.log({message})
     wss.broadcast(message) // Broadcast to all clients in wss
-    if (ws.readyState === wss.OPEN) {
+    if (ws.readyState === ws.OPEN) {
         ws.send('Welcome to the websocker server!')
     }
     ws.on('close', function close() {
